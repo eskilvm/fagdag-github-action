@@ -20,23 +20,15 @@ if __name__ == '__main__':
     pull_request = repo.get_pull(pr_number)
     branch = pull_request.head.ref 
     
+
     file_path = "poetry.md".replace("/github/workspace/", "")
     #fsdfsdfdsfsfdffffff
     #1
-    commit_message = get_latest_commit_message(pull_request)
 
-    #2
-    if is_haiku(commit_message):
-        haiku = pyfiglet.figlet_format(commit_message)
-        with open(file_path, 'w') as f:
-            f.write(haiku)
-        f.close()
+    commit_message = get_latest_commit_message(pull_request)
+    if(is_haiku(commit_message)):
+        haiku_ascii_art = pyfiglet.figlet_format(commit_message)
+        with open(file_path, "w") as file:
+            file.write(f"```{haiku_ascii_art}```")
         commit_and_push(repo, branch, file_path)
-    
-    #TODO 
-    # 1) Get the latest commit messagefsfdsf
-    # 2) Check if the commit message follows the haiku format
-    # 3) If this is the case:
-    #      - Generate ascii art from the commit message using pyfiglet 
-    #      - Write the ascii art to haiku.md
-    #      - Commit and push the results!      
+
