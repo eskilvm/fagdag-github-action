@@ -34,7 +34,7 @@ if __name__ == '__main__':
         commit_and_push(repo, branch, file_path)
     
     #TODO 
-    # 1) Get the latest commit message
+    # 1) Get the latest commit messagefsfdsf
     # 2) Check if the commit message follows the haiku format
     # 3) If this is the case:
     #      - Generate ascii art from the commit message using pyfiglet 
