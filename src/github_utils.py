@@ -1,11 +1,7 @@
 from github import PullRequest, InputGitAuthor, Repository
 
 def get_latest_commit_message(pull_request : PullRequest) -> list[str]:
-    commit_message = []
-    for commit in pull_request.get_commits():
-        commit_message.append(commit.get_message())
-    return commit_message[-1]
-    #raise NotImplementedError("TODO")
+    return [c.commit.message for c in pull_request.get_commits()][-1]  
 
 def commit_and_push(repo: Repository, target_branch:str, file_path: str) -> None:
     author = InputGitAuthor(
