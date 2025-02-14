@@ -27,6 +27,6 @@ if __name__ == '__main__':
     if(is_haiku(commit_message)):
         haiku_ascii_art = pyfiglet.figlet_format(commit_message)
         with open(file_path, "w") as file:
-            file.write(f"```{haiku_ascii_art}```")
+            file.write(f"```{haiku_ascii_art}```") #aaaaa
         commit_and_push(repo, branch, file_path)
             
